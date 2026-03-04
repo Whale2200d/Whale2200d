@@ -1,7 +1,5 @@
 # 임경락 | Frontend Developer
 
-<img src="01_details/IM_GYEONGRAK_Profile.png" alt="증명사진" width="150" />
-
 **불확실한 API 환경에서도 안정적인 인터페이스를 구축하는 프론트엔드 개발자**  
 TanStack Query + FSD 아키텍처로 코드 중복 **40% 감소**, 웹 성능 **37% 개선**을 달성했습니다.
 
