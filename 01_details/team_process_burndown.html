@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>팀 프로세스 메트릭 · Burndown 스타일 시각화</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root { --bg: #0f1419; --card: #1a2332; --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --done: #3fb950; --remain: #f85149; --migration: #d29922; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 1.5rem; }
+    h1 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+    .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; }
+    .metric { background: var(--card); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); }
+    .metric .val { font-size: 1.25rem; font-weight: 600; color: var(--accent); }
+    .metric .lbl { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+    .metric.ok .val { color: var(--done); }
+    .chart-wrap { background: var(--card); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); margin-bottom: 1rem; max-width: 100%; }
+    .chart-wrap h2 { font-size: 1rem; margin: 0 0 0.75rem 0; color: var(--muted); }
+    canvas { max-height: 380px; }
+    .legend { font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; }
+    .migration-note { background: rgba(210,153,34,0.12); border-left: 3px solid var(--migration); padding: 0.5rem 0.75rem; margin-top: 1rem; font-size: 0.85rem; border-radius: 0 6px 6px 0; }
+  </style>
+</head>
+<body>
+  <h1>팀 프로세스 메트릭 · Burndown 스타일</h1>
+  <p class="sub">frontend-mono + project__front__wallet Git 연동, 이관 시점 반영</p>
+
+  <div class="metrics" id="metricsRow"></div>
+  <div class="chart-wrap">
+    <h2>스프린트/기간별 커밋 패턴 (Burndown 스타일)</h2>
+    <canvas id="burndownChart"></canvas>
+    <p class="legend">· 남은 작업량(remaining): 총 커밋 수 − 누적 완료 커밋 · 완료(completed): 스프린트당 완료 커밋 · 세로 영역: 이관 기간(2025-08-18 ~ 2025-08-21)</p>
+    <div class="migration-note" id="migrationNote"></div>
+  </div>
+
+  <div class="chart-wrap">
+    <h2>스프린트당 PR 머지 (Velocity proxy)</h2>
+    <canvas id="velocityChart"></canvas>
+  </div>
+
+  <script>
+    (function() {
+      const reportPath = 'team_process_metrics_report.json';
+      fetch(reportPath)
+        .then(r => r.ok ? r.json() : Promise.reject(new Error('Report not found')))
+        .then(report => {
+          const { metrics, process_improvement, burndown } = report;
+
+          // Metrics row
+          const m = metrics;
+          const html = `
+            <div class="metric ${m.velocity.in_industry_range ? 'ok' : ''}">
+              <div class="val">${m.velocity.avg_pr_per_sprint}</div>
+              <div class="lbl">Velocity (PR/스프린트) · 목표 20~50</div>
+            </div>
+            <div class="metric ok">
+              <div class="val">${m.cycle_time_days.pct_under_7_days}%</div>
+              <div class="lbl">Cycle Time &lt;1주 비율</div>
+            </div>
+            <div class="metric ${m.wip.within_industry ? 'ok' : ''}">
+              <div class="val">${m.wip.estimate}</div>
+              <div class="lbl">WIP 추정 (목표 ≤${m.wip.industry_max})</div>
+            </div>
+            <div class="metric">
+              <div class="val">${process_improvement.efficiency_improvement_pct_after_pipeline}%</div>
+              <div class="lbl">파이프라인/알림 도입 후 처리량 변화</div>
+            </div>
+          `;
+          document.getElementById('metricsRow').innerHTML = html;
+
+          document.getElementById('migrationNote').textContent =
+            `이관: ${burndown.migration_start} ~ ${burndown.migration_end} (frontend-mono → project__front__wallet). 총 커밋: ${burndown.total_commits.toLocaleString()}.`;
+
+          const sprints = burndown.sprints;
+          const labels = sprints.map(s => s.sprint_start);
+          const remaining = sprints.map(s => s.remaining_commits);
+          const completed = sprints.map(s => s.commits_done);
+          const merges = sprints.map(s => s.merges_done);
+
+          const migrationStart = burndown.migration_start;
+          const migrationEnd = burndown.migration_end;
+          const idxStart = labels.findIndex(l => l >= migrationStart);
+          const idxEnd = labels.findIndex(l => l >= migrationEnd);
+
+          new Chart(document.getElementById('burndownChart'), {
+            type: 'line',
+            data: {
+              labels,
+              datasets: [
+                {
+                  label: '남은 작업량 (Remaining)',
+                  data: remaining,
+                  borderColor: '#f85149',
+                  backgroundColor: 'rgba(248,81,73,0.1)',
+                  fill: true,
+                  tension: 0.2,
+                  yAxisID: 'y',
+                },
+                {
+                  label: '스프린트 완료 (Completed)',
+                  data: completed,
+                  borderColor: '#3fb950',
+                  backgroundColor: 'rgba(63,185,80,0.15)',
+                  fill: false,
+                  tension: 0.2,
+                  yAxisID: 'y1',
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: true,
+              interaction: { mode: 'index', intersect: false },
+              plugins: {
+                legend: { position: 'top' },
+                annotation: false,
+              },
+              scales: {
+                x: {
+                  title: { display: true, text: '스프린트 시작일' },
+                  ticks: { maxRotation: 45, maxTicksLimit: 20 },
+                },
+                y: {
+                  type: 'linear',
+                  position: 'left',
+                  title: { display: true, text: '남은 커밋 수' },
+                  min: 0,
+                },
+                y1: {
+                  type: 'linear',
+                  position: 'right',
+                  title: { display: true, text: '스프린트당 완료 커밋' },
+                  min: 0,
+                  grid: { drawOnChartArea: false },
+                },
+              },
+            },
+            plugins: [{
+              id: 'migrationZone',
+              afterDatasetsDraw(chart) {
+                if (idxStart < 0 || idxEnd < 0) return;
+                const ctx = chart.ctx;
+                const xAxis = chart.scales.x;
+                const left = xAxis.getPixelForValue(labels[idxStart]);
+                const right = xAxis.getPixelForValue(labels[Math.min(idxEnd + 1, labels.length - 1)]);
+                ctx.save();
+                ctx.globalAlpha = 0.15;
+                ctx.fillStyle = '#d29922';
+                ctx.fillRect(left, chart.chartArea.top, right - left, chart.chartArea.bottom - chart.chartArea.top);
+                ctx.restore();
+              },
+            }],
+          });
+
+          new Chart(document.getElementById('velocityChart'), {
+            type: 'bar',
+            data: {
+              labels,
+              datasets: [{
+                label: 'PR 머지 수',
+                data: merges,
+                backgroundColor: sprints.map(s =>
+                  s.repo === 'project__front__wallet' ? 'rgba(88,166,255,0.7)' : 'rgba(63,185,80,0.6)'
+                ),
+              }],
+            },
+            options: {
+              responsive: true,
+              plugins: { legend: { display: false } },
+              scales: {
+                x: { ticks: { maxRotation: 45, maxTicksLimit: 22 } },
+                y: { beginAtZero: true, title: { display: true, text: 'PR 머지 수' } },
+              },
+            },
+          });
+        })
+        .catch(err => {
+          document.body.insertAdjacentHTML('beforeend', '<p style="color:#f85149">Report load failed: ' + err.message + '. Run: python3 scripts/team_process_metrics.py</p>');
+        });
+    })();
+  </script>
+</body>
+</html>

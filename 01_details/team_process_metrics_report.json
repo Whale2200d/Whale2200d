@@ -1,0 +1,561 @@
+{
+  "generated_at": "2026-03-04T04:23:43.213751Z",
+  "repos": {
+    "frontend_mono": {
+      "commits": 6707,
+      "merges": 629
+    },
+    "project_front_wallet": {
+      "commits": 549,
+      "merges": 1
+    }
+  },
+  "metrics": {
+    "velocity": {
+      "avg_pr_per_sprint": 41.9,
+      "industry_range": [
+        20,
+        50
+      ],
+      "in_industry_range": true
+    },
+    "cycle_time_days": {
+      "avg": 0.0,
+      "median": 0.0,
+      "pct_under_7_days": 100.0,
+      "industry_target_days": 7
+    },
+    "wip": {
+      "estimate": 0.0,
+      "industry_max": 10,
+      "within_industry": true
+    }
+  },
+  "process_improvement": {
+    "events": [
+      [
+        "2024-03-28",
+        "PR 파이프라인/리뷰 자동화"
+      ],
+      [
+        "2024-10-24",
+        "reviewer 알림, git ci (#1625)"
+      ],
+      [
+        "2024-11-21",
+        "Git notify (#1845)"
+      ],
+      [
+        "2025-01-07",
+        "Job Queue (#2210)"
+      ],
+      [
+        "2025-08-18",
+        "wallet 이관 시작"
+      ],
+      [
+        "2025-08-21",
+        "wallet 이관 완료, mono CI 정비"
+      ]
+    ],
+    "efficiency_improvement_pct_after_pipeline": -100.0,
+    "throughput_before_pr_pipeline_pr_per_week": 96.33,
+    "throughput_after_notify_pr_per_week": 0.0,
+    "period_before": "2024-03-20 ~ 2024-04-10",
+    "period_after": "2024-11-21 ~ 2024-12-12",
+    "vs_industry": {
+      "cycle_time_under_7d_pct": 100.0,
+      "velocity_in_20_50": true,
+      "avg_velocity_pr_per_sprint": 41.9,
+      "wip_under_10": true,
+      "wip_estimate": 0.0
+    }
+  },
+  "burndown": {
+    "total_commits": 7256,
+    "migration_start": "2025-08-18",
+    "migration_end": "2025-08-21",
+    "sprints": [
+      {
+        "sprint_start": "2024-03-20",
+        "sprint_end": "2024-04-02",
+        "repo": "frontend-mono",
+        "commits_done": 764,
+        "merges_done": 161,
+        "cumulative_commits": 764,
+        "remaining_commits": 6492
+      },
+      {
+        "sprint_start": "2024-04-03",
+        "sprint_end": "2024-04-16",
+        "repo": "frontend-mono",
+        "commits_done": 754,
+        "merges_done": 204,
+        "cumulative_commits": 1518,
+        "remaining_commits": 5738
+      },
+      {
+        "sprint_start": "2024-04-17",
+        "sprint_end": "2024-04-30",
+        "repo": "frontend-mono",
+        "commits_done": 409,
+        "merges_done": 90,
+        "cumulative_commits": 1927,
+        "remaining_commits": 5329
+      },
+      {
+        "sprint_start": "2024-05-01",
+        "sprint_end": "2024-05-14",
+        "repo": "frontend-mono",
+        "commits_done": 264,
+        "merges_done": 36,
+        "cumulative_commits": 2191,
+        "remaining_commits": 5065
+      },
+      {
+        "sprint_start": "2024-05-15",
+        "sprint_end": "2024-05-28",
+        "repo": "frontend-mono",
+        "commits_done": 115,
+        "merges_done": 0,
+        "cumulative_commits": 2306,
+        "remaining_commits": 4950
+      },
+      {
+        "sprint_start": "2024-05-29",
+        "sprint_end": "2024-06-11",
+        "repo": "frontend-mono",
+        "commits_done": 18,
+        "merges_done": 0,
+        "cumulative_commits": 2324,
+        "remaining_commits": 4932
+      },
+      {
+        "sprint_start": "2024-06-12",
+        "sprint_end": "2024-06-25",
+        "repo": "frontend-mono",
+        "commits_done": 0,
+        "merges_done": 0,
+        "cumulative_commits": 2324,
+        "remaining_commits": 4932
+      },
+      {
+        "sprint_start": "2024-06-26",
+        "sprint_end": "2024-07-09",
+        "repo": "frontend-mono",
+        "commits_done": 591,
+        "merges_done": 6,
+        "cumulative_commits": 2915,
+        "remaining_commits": 4341
+      },
+      {
+        "sprint_start": "2024-07-10",
+        "sprint_end": "2024-07-23",
+        "repo": "frontend-mono",
+        "commits_done": 214,
+        "merges_done": 0,
+        "cumulative_commits": 3129,
+        "remaining_commits": 4127
+      },
+      {
+        "sprint_start": "2024-07-24",
+        "sprint_end": "2024-08-06",
+        "repo": "frontend-mono",
+        "commits_done": 357,
+        "merges_done": 0,
+        "cumulative_commits": 3486,
+        "remaining_commits": 3770
+      },
+      {
+        "sprint_start": "2024-08-07",
+        "sprint_end": "2024-08-20",
+        "repo": "frontend-mono",
+        "commits_done": 380,
+        "merges_done": 21,
+        "cumulative_commits": 3866,
+        "remaining_commits": 3390
+      },
+      {
+        "sprint_start": "2024-08-21",
+        "sprint_end": "2024-09-03",
+        "repo": "frontend-mono",
+        "commits_done": 278,
+        "merges_done": 0,
+        "cumulative_commits": 4144,
+        "remaining_commits": 3112
+      },
+      {
+        "sprint_start": "2024-09-04",
+        "sprint_end": "2024-09-17",
+        "repo": "frontend-mono",
+        "commits_done": 157,
+        "merges_done": 0,
+        "cumulative_commits": 4301,
+        "remaining_commits": 2955
+      },
+      {
+        "sprint_start": "2024-09-18",
+        "sprint_end": "2024-10-01",
+        "repo": "frontend-mono",
+        "commits_done": 196,
+        "merges_done": 0,
+        "cumulative_commits": 4497,
+        "remaining_commits": 2759
+      },
+      {
+        "sprint_start": "2024-10-02",
+        "sprint_end": "2024-10-15",
+        "repo": "frontend-mono",
+        "commits_done": 99,
+        "merges_done": 0,
+        "cumulative_commits": 4596,
+        "remaining_commits": 2660
+      },
+      {
+        "sprint_start": "2024-10-16",
+        "sprint_end": "2024-10-29",
+        "repo": "frontend-mono",
+        "commits_done": 104,
+        "merges_done": 3,
+        "cumulative_commits": 4700,
+        "remaining_commits": 2556
+      },
+      {
+        "sprint_start": "2024-10-30",
+        "sprint_end": "2024-11-12",
+        "repo": "frontend-mono",
+        "commits_done": 281,
+        "merges_done": 55,
+        "cumulative_commits": 4981,
+        "remaining_commits": 2275
+      },
+      {
+        "sprint_start": "2024-11-13",
+        "sprint_end": "2024-11-26",
+        "repo": "frontend-mono",
+        "commits_done": 128,
+        "merges_done": 9,
+        "cumulative_commits": 5109,
+        "remaining_commits": 2147
+      },
+      {
+        "sprint_start": "2024-11-27",
+        "sprint_end": "2024-12-10",
+        "repo": "frontend-mono",
+        "commits_done": 149,
+        "merges_done": 0,
+        "cumulative_commits": 5258,
+        "remaining_commits": 1998
+      },
+      {
+        "sprint_start": "2024-12-11",
+        "sprint_end": "2024-12-24",
+        "repo": "frontend-mono",
+        "commits_done": 196,
+        "merges_done": 0,
+        "cumulative_commits": 5454,
+        "remaining_commits": 1802
+      },
+      {
+        "sprint_start": "2024-12-25",
+        "sprint_end": "2025-01-07",
+        "repo": "frontend-mono",
+        "commits_done": 85,
+        "merges_done": 0,
+        "cumulative_commits": 5539,
+        "remaining_commits": 1717
+      },
+      {
+        "sprint_start": "2025-01-08",
+        "sprint_end": "2025-01-21",
+        "repo": "frontend-mono",
+        "commits_done": 146,
+        "merges_done": 0,
+        "cumulative_commits": 5685,
+        "remaining_commits": 1571
+      },
+      {
+        "sprint_start": "2025-01-22",
+        "sprint_end": "2025-02-04",
+        "repo": "frontend-mono",
+        "commits_done": 302,
+        "merges_done": 0,
+        "cumulative_commits": 5987,
+        "remaining_commits": 1269
+      },
+      {
+        "sprint_start": "2025-02-05",
+        "sprint_end": "2025-02-18",
+        "repo": "frontend-mono",
+        "commits_done": 96,
+        "merges_done": 0,
+        "cumulative_commits": 6083,
+        "remaining_commits": 1173
+      },
+      {
+        "sprint_start": "2025-02-19",
+        "sprint_end": "2025-03-04",
+        "repo": "frontend-mono",
+        "commits_done": 0,
+        "merges_done": 0,
+        "cumulative_commits": 6083,
+        "remaining_commits": 1173
+      },
+      {
+        "sprint_start": "2025-03-05",
+        "sprint_end": "2025-03-18",
+        "repo": "frontend-mono",
+        "commits_done": 17,
+        "merges_done": 0,
+        "cumulative_commits": 6100,
+        "remaining_commits": 1156
+      },
+      {
+        "sprint_start": "2025-03-19",
+        "sprint_end": "2025-04-01",
+        "repo": "frontend-mono",
+        "commits_done": 187,
+        "merges_done": 0,
+        "cumulative_commits": 6287,
+        "remaining_commits": 969
+      },
+      {
+        "sprint_start": "2025-04-02",
+        "sprint_end": "2025-04-15",
+        "repo": "frontend-mono",
+        "commits_done": 96,
+        "merges_done": 0,
+        "cumulative_commits": 6383,
+        "remaining_commits": 873
+      },
+      {
+        "sprint_start": "2025-04-16",
+        "sprint_end": "2025-04-29",
+        "repo": "frontend-mono",
+        "commits_done": 63,
+        "merges_done": 5,
+        "cumulative_commits": 6446,
+        "remaining_commits": 810
+      },
+      {
+        "sprint_start": "2025-04-30",
+        "sprint_end": "2025-05-13",
+        "repo": "frontend-mono",
+        "commits_done": 49,
+        "merges_done": 7,
+        "cumulative_commits": 6495,
+        "remaining_commits": 761
+      },
+      {
+        "sprint_start": "2025-05-14",
+        "sprint_end": "2025-05-27",
+        "repo": "frontend-mono",
+        "commits_done": 4,
+        "merges_done": 2,
+        "cumulative_commits": 6499,
+        "remaining_commits": 757
+      },
+      {
+        "sprint_start": "2025-05-28",
+        "sprint_end": "2025-06-10",
+        "repo": "frontend-mono",
+        "commits_done": 0,
+        "merges_done": 0,
+        "cumulative_commits": 6499,
+        "remaining_commits": 757
+      },
+      {
+        "sprint_start": "2025-06-11",
+        "sprint_end": "2025-06-24",
+        "repo": "frontend-mono",
+        "commits_done": 0,
+        "merges_done": 0,
+        "cumulative_commits": 6499,
+        "remaining_commits": 757
+      },
+      {
+        "sprint_start": "2025-06-25",
+        "sprint_end": "2025-07-08",
+        "repo": "frontend-mono",
+        "commits_done": 1,
+        "merges_done": 0,
+        "cumulative_commits": 6500,
+        "remaining_commits": 756
+      },
+      {
+        "sprint_start": "2025-07-09",
+        "sprint_end": "2025-07-22",
+        "repo": "frontend-mono",
+        "commits_done": 37,
+        "merges_done": 13,
+        "cumulative_commits": 6537,
+        "remaining_commits": 719
+      },
+      {
+        "sprint_start": "2025-07-23",
+        "sprint_end": "2025-08-05",
+        "repo": "frontend-mono",
+        "commits_done": 107,
+        "merges_done": 16,
+        "cumulative_commits": 6644,
+        "remaining_commits": 612
+      },
+      {
+        "sprint_start": "2025-08-06",
+        "sprint_end": "2025-08-19",
+        "repo": "frontend-mono",
+        "commits_done": 58,
+        "merges_done": 1,
+        "cumulative_commits": 6702,
+        "remaining_commits": 554
+      },
+      {
+        "sprint_start": "2025-08-18",
+        "sprint_end": "2025-08-31",
+        "repo": "project__front__wallet",
+        "commits_done": 67,
+        "merges_done": 1,
+        "cumulative_commits": 6769,
+        "remaining_commits": 487
+      },
+      {
+        "sprint_start": "2025-08-20",
+        "sprint_end": "2025-09-02",
+        "repo": "frontend-mono",
+        "commits_done": 5,
+        "merges_done": 0,
+        "cumulative_commits": 6774,
+        "remaining_commits": 482
+      },
+      {
+        "sprint_start": "2025-09-01",
+        "sprint_end": "2025-09-14",
+        "repo": "project__front__wallet",
+        "commits_done": 329,
+        "merges_done": 0,
+        "cumulative_commits": 7103,
+        "remaining_commits": 153
+      },
+      {
+        "sprint_start": "2025-09-15",
+        "sprint_end": "2025-09-28",
+        "repo": "project__front__wallet",
+        "commits_done": 127,
+        "merges_done": 0,
+        "cumulative_commits": 7230,
+        "remaining_commits": 26
+      },
+      {
+        "sprint_start": "2025-09-29",
+        "sprint_end": "2025-10-12",
+        "repo": "project__front__wallet",
+        "commits_done": 26,
+        "merges_done": 0,
+        "cumulative_commits": 7256,
+        "remaining_commits": 0
+      }
+    ]
+  },
+  "process_improvement_commits_sample": [
+    {
+      "date": "2025-08-21",
+      "subject": "fix: chore: ci-server 자동화 스크립트 미적용 부분 수정"
+    },
+    {
+      "date": "2025-04-30",
+      "subject": "🔧[UPDATE] AndroidManifest.xml 및 MainActivity.java에서 알림 클릭 시 앱 열기 기능 추가 및 알림 채널 설"
+    },
+    {
+      "date": "2025-04-30",
+      "subject": "🎨[REFACTORING] 코드 포맷팅. 알림 클릭시 동작 수정"
+    },
+    {
+      "date": "2025-04-16",
+      "subject": "v53 PR (#2568)"
+    },
+    {
+      "date": "2025-01-25",
+      "subject": "🎨[REFACTORING] 폴더명 변경 auto-test => ci-server"
+    },
+    {
+      "date": "2025-01-08",
+      "subject": "🛠️[FIX] Notify Message 관리 로직 수정 (#2218)"
+    },
+    {
+      "date": "2025-01-07",
+      "subject": "✨[FEAT] Job 관리용 Queue 생성 및 적용 (#2210)"
+    },
+    {
+      "date": "2025-01-01",
+      "subject": "🛠️[FIX] PR Creator 본명 출력되도록 수정 (#2167)"
+    },
+    {
+      "date": "2025-01-01",
+      "subject": "🛠️[FIX] 테스트 완료 후 pr_notify 텔레그램 메시지 전송"
+    },
+    {
+      "date": "2024-12-30",
+      "subject": "🔥[REMOVE] reviewer 서버 제거, 사용하지 않는 script 제거"
+    },
+    {
+      "date": "2024-12-09",
+      "subject": "🚑[HOTFIX] 지갑 - localStorage 키값 수정(이전 dapping 호환문제), 중복된 auth관련 스토어 제거, 안드로이드 새버전"
+    },
+    {
+      "date": "2024-11-21",
+      "subject": "Git notify (#1845)"
+    },
+    {
+      "date": "2024-11-20",
+      "subject": "✨[FEAT] Jenkins 1차 초안"
+    },
+    {
+      "date": "2024-10-29",
+      "subject": "🐛[BUG] Dialog 적용 부분 제거(테스트 에러 우선 제거 및 추후 PR 예정)"
+    },
+    {
+      "date": "2024-10-24",
+      "subject": "✨[FEAT] reviewer 알림, git ci 수정 (#1625)"
+    },
+    {
+      "date": "2024-08-28",
+      "subject": "안드로이드 새 버전 알림 다이얼로그 추가 (#1306)"
+    },
+    {
+      "date": "2024-08-19",
+      "subject": "👷[CHORE] Bridge 메뉴 준비중 toast 처리, bitcoint 상단 앱바의 알림 제거 (#1191)"
+    },
+    {
+      "date": "2024-08-14",
+      "subject": "reviewer server api url change"
+    },
+    {
+      "date": "2024-07-11",
+      "subject": "github notify를 위한 review-cofig 내 API_URL 수정"
+    },
+    {
+      "date": "2024-07-05",
+      "subject": "데모 알림 문구 번역 수정"
+    },
+    {
+      "date": "2024-06-28",
+      "subject": "비트코인 네트워크 전송 경고 알림 작업 중"
+    },
+    {
+      "date": "2024-05-21",
+      "subject": "[fix] 알림 삭제 취소시/복구시 로직 수정 (#561)"
+    },
+    {
+      "date": "2024-05-17",
+      "subject": "알림 페이지 (#543)"
+    },
+    {
+      "date": "2024-05-14",
+      "subject": "[feat] 리뷰 알림 수정"
+    },
+    {
+      "date": "2024-04-30",
+      "subject": "[fix] 광고성 정보 수신 설정 시 알림 dialog"
+    }
+  ]
+}
