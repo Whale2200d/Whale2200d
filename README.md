@@ -1,8 +1,4 @@
-# Whale2200d (임경락) - 프론트엔드 개발자 프로필
-
-<p align="center">
-  <img src="01_resume/01_details/IM_GYEONGRAK_Profile.png" alt="프로필 사진" width="150" />
-</p>
+# Profile
 
 안녕하세요, **임경락**입니다. 웹 성능, 확장 가능한 아키텍처, 효율적인 팀 프로세스에 강점을 가진 프론트엔드 개발자입니다. 3년 이상의 경험으로 React, Next.js, TypeScript를 활용해 동적 환경에서 안정적인 인터페이스를 구축했습니다. 실제 임팩트를 위한 코드 최적화에 열정적입니다—아래 프로젝트와 분석을 확인해보세요!
 
