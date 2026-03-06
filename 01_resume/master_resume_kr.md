@@ -13,7 +13,7 @@
 
 **프론트엔드 개발자, Devtools, 서울** (2024.02 - 2025.10)
 
-- **웹 성능**: 성능·쿼리 관련 커밋 214건, 캐싱·refetch 제거·로딩 개선으로 LCP 5~12%, INP 10~20%, CLS 5~10% 예상 개선 (RUM/Lighthouse 실측 도입 시 정량화 가능). ([웹 성능 KPI 분석](01_details/analysis-2-web-performance-kpi.md) 참조)
+- **웹 성능**: 성능·쿼리 관련 커밋 214건, 캐싱·refetch 제거·로딩 개선으로 LCP 5\~12%, INP 10\~20%, CLS 5\~10% 예상 개선 (RUM/Lighthouse 실측 도입 시 정량화 가능). ([웹 성능 KPI 분석](01_details/analysis-2-web-performance-kpi.md) 참조)
 - **사용자 참여**: 분리 전·후 UI·모듈화·PWA·접근성·일관성 개선 커밋 지속. 정량 목표 달성 여부는 GA/설문 실측 필요. ([사용자 참여 메트릭 분석](01_details/analysis-3-user-engagement-metrics.md) 참조)
 - **코드·아키텍처**: 모노레포 → 앱별 레포 분리(wallet·ui·util), FSD·Turbo·CI 도입. 리팩터 비율 20.5~27.3%, Maintainability Index 62 근접, 코드 효율성 추정 58/100 (SonarQube·Coverage 도입 시 상향 가능). ([코드 효율성 분석](01_details/analysis-4-code-efficiency.md) 참조)
 - **배포·스케일링**: Turbo·CI/CD·FSD 관련 커밋 지속, 분리 후 앱별 독립 빌드·배포. 주당 머지 약 25건·커밋 107건 수준으로 일일 배포 가능 추정, 리뷰·배포 20~30% 단축 추정. 소스 파일 1,475→2,654개(약 80%↑) 규모 확장. ([배포 및 스케일링 분석](01_details/analysis-5-deployment-scaling.md) 참조)
@@ -23,7 +23,7 @@
 
   (URL 클릭 시 전체 그래프 보기: [https://whale2200d.github.io/team_process_burndown/](https://whale2200d.github.io/team_process_burndown/))
 
-- **비즈니스·품질**: 중복 제거·모듈화로 비용 25~35% 절감 유추, 확장성 40~50% 향상 추정. Git 기반 효율 기여 추정 65/100. 실측(ROI·NPS·배포 로그·Coverage) 도입 시 목표 관리·점수 정교화 권장. ([비즈니스 영향 분석](01_details/analysis-7-business-impact.md) 참조)
+- **비즈니스·품질**: 중복 제거·모듈화로 비용 25\~35% 절감 유추, 확장성 40\~50% 향상 추정. Git 기반 효율 기여 추정 65/100. 실측(ROI·NPS·배포 로그·Coverage) 도입 시 목표 관리·점수 정교화 권장. ([비즈니스 영향 분석](01_details/analysis-7-business-impact.md) 참조)
 
 **리서처 연구원, IPTOB, 서울 및 대구** (2020.02 - 2021.12)
 
