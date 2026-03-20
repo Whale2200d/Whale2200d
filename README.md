@@ -20,7 +20,7 @@
 - **사용자 참여**: UI/PWA 개선으로 Engagement Rate 58–65% 추정. ([상세](01_resume/01_details/analysis-3-user-engagement-metrics.md))
 - **비즈니스 임팩트**: 효율성 향상으로 ROI ≥2x, 분기 성장 20% 추정 (65/100 점수). ([상세](01_resume/01_details/analysis-7-business-impact.md))
 
-### IPTOB 리서처 연구원 (2020.02 - 2021.12)
+### IPTOB 리서처 연구원 (2020.01 - 2022.09)
 
 - 오프라인 컨설팅을 온라인으로 전환: 100+ 파트너 대상, 응답 일관성 95% 달성 및 문의 처리 시간 25% 단축.
 
